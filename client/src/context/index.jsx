@@ -175,7 +175,8 @@ export const StateContextProvider = ({ children }) => {
     }
 
     try {
-      await fetch('http://localhost:8080/api/v1/saveLikeRoutes', {
+      // http://localhost:8080
+        await fetch('https://ia-net.onrender.com/api/v1/saveLikeRoutes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -183,7 +184,8 @@ export const StateContextProvider = ({ children }) => {
         body: JSON.stringify(likeData),
       })
 
-      const response = await fetch('http://localhost:8080/api/v1/checkMatchesRoutes', {
+      // 'http://localhost:8080/
+        const response = await fetch('https://ia-net.onrender.com/api/v1/checkMatchesRoutes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -224,7 +226,8 @@ export const StateContextProvider = ({ children }) => {
     
     try {
 
-      await fetch('http://localhost:8080/api/v1/CreateuserTinderRoutes', {
+      // http://localhost:8080/
+        await fetch('https://ia-net.onrender.com/api/v1/CreateuserTinderRoutes', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -243,8 +246,10 @@ export const StateContextProvider = ({ children }) => {
 
   const requestCurrentUserData = async walletAddress => {
     try {
+
+      //   http://localhost:8080/
       const response = await fetch(
-        `http://localhost:8080/api/v1/fetchCurrentUserDataRoutes?activeAccount=${walletAddress}`,
+           `https://ia-net.onrender.com/api/v1/fetchCurrentUserDataRoutes?activeAccount=${walletAddress}`,
       )
       
       const data = await response.json()
@@ -264,7 +269,7 @@ export const StateContextProvider = ({ children }) => {
   const requestUsersData = async activeAccount => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/fetchUsersRoutes?activeAccount=${activeAccount}`,
+        `https://ia-net.onrender.com/api/v1/fetchUsersRoutes?activeAccount=${activeAccount}`,
       )
       const data = await response.json()
 

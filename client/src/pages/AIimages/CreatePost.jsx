@@ -28,7 +28,8 @@ const CreatePost = ({ PageActiveAIimages,  SetPageActiveAIimages }) => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+        c
+        const response = await fetch('https://ia-net.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -56,7 +57,8 @@ const CreatePost = ({ PageActiveAIimages,  SetPageActiveAIimages }) => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        //http://localhost:8080
+        const response = await fetch('https://ia-net.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
