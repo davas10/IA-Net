@@ -28,7 +28,7 @@ const CreatePost = ({ PageActiveAIimages,  SetPageActiveAIimages }) => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        c
+        //http://localhost:8080
         const response = await fetch('https://ia-net.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
